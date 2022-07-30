@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background-image: linear-gradient(rgb(38, 36, 36),rgb(32, 32, 32),rgb(38, 36, 36));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.planet{
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-image: url(img/Jupiter_and_its_shrunken_Great_Red_Spot.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px 10px whitesmoke;
+    /* transform: rotate3d(1,1,1, 95deg); */
+    transform-style: preserve-3d;
+    /* animation: planet infinite ease 20s ; */
+}
+@keyframes planet{
+    to{
+        transform: rotate3d(1,10,1, 360deg);
+    }
+}
+.planet>h1{
+    font-family: serif;
+    font-size: 9vw;
+    color: white;
+    transform: translateZ(350px);
+    display: flex;
+    transform-style: preserve-3d;
+    transform-origin: 50%50%-200px;
+    animation: twist infinite 10s linear;
+}
+@keyframes twist{
+    to{
+        transform:translateZ(350px)rotateY(360deg);
+    }
+}
+.planet>h1>span{
+    display: flex;
+}
+.planet>h1>span:nth-of-type(1){
+    transform: translatez(-35px)rotateY(-15deg);
+}
+.planet>h1>span:nth-of-type(2){
+    transform: translatez(-17.5px)rotateY(-10deg);
+
+}
+.planet>h1>span:nth-of-type(4){
+    transform: translatez(-17.5px)rotateY(10deg);
+
+}
+.planet>h1>span:nth-of-type(5){
+    transform: translatez(-35px)rotateY(15deg);
+
+}
